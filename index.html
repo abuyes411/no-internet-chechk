@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="icon" type="image/png" href="icon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - LT Quiz</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #fff4ec;
+      color: #333;
+    }
+    .navbar {
+      background-color: #fcf0e8;
+      padding: 15px 30px;
+    }
+    .navbar-brand {
+      font-weight: 700;
+      color: #000 !important;
+    }
+    .btn-primary {
+      background-color: #f39c12;
+      border: none;
+      transition: transform 0.2s ease;
+    }
+    .btn-primary:hover {
+      background-color: #e67e22;
+      transform: scale(1.05);
+    }
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .hero h1 {
+      font-weight: 700;
+      color: #333;
+    }
+    .card {
+      border: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .footer {
+      background-color: #fcf0e8;
+      color: #000;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="#"><img onclick="back()" src="logo.png" alt="Logo" height="50"> Quiz</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/"><i class="fa-solid fa-home"></i> Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/quiz"><i class="fa-solid fa-book"></i>Quizzes</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">
+              <i class="fa-solid fa-info-circle"></i> About Us
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>About LT Quiz</h1>
+      <p>We are a platform dedicated to helping students prepare for ministry exams with authentic materials and interactive learning tools.</p>
+    </div>
+  </section>
+
+  <!-- About Us Content -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Our Mission</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <p class="lead">At LT Quiz, we are committed to providing students with accurate and relevant resources to aid in their ministry exam preparation. Our platform offers interactive quizzes, past year questions, and offline resources to ensure a comprehensive learning experience.</p>
+        </div>
+        <div class="col-md-6">
+          <p class="lead">Our goal is to make studying for ministry exams more effective and engaging. We believe in helping students track their progress and providing tools that allow them to practice at their own pace, anywhere, anytime.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Why Choose LT Quiz?</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Real Exam Experience</h3>
+              <p class="card-text">We provide past year questions to help you prepare for the real ministry exams.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Interactive Quizzes</h3>
+              <p class="card-text">Take quizzes in a format that simulates the actual exam environment, making learning fun and effective.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Offline Access</h3>
+              <p class="card-text">Download quizzes and practice without an internet connection at any time.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <footer class="footer">
+    <div class="container">
+      <div class="text-center">
+        <small>
+          © 2016-2024 Oromia Education Bureau (OEB) <br>
+          Used under educational fair use policy<br>
+          LT Quiz is not affiliated with OEB
+          <br><br>
+        <strong>Disclaimer:</strong> This site may display third-party advertisements. We do not control or endorse these ads. Please exercise caution when interacting with them.
+      </small>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function back() {
+      window.location.href = '/'; 
+    }
+
+    // scripts/app.js (or directly in index.html, quiz.html, about.html)
+
+// Check if the browser supports Service Workers
+if ('serviceWorker' in navigator) {
+  // Add a 'load' event listener to ensure the page is fully loaded before registering
+  window.addEventListener('load', () => {
+    // Register your service-worker.js file.
+    // The path '/' means it will control the entire scope of your domain.
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(registration => {
+        // Registration was successful
+        console.log('Service Worker registered with scope:', registration.scope);
+      })
+      .catch(error => {
+        // Registration failed
+        console.error('Service Worker registration failed:', error);
+      });
+  });
+} else {
+  console.warn('Service Workers are not supported in this browser.');
+}
+
+// Your existing back() function for the logo
+function back() {
+    window.history.back();
+}
+
+// You might also want to add event listeners for online/offline status for live feedback
+window.addEventListener('online', () => {
+    console.log('App is online!');
+    // Potentially update UI or retry failed requests
+});
+
+window.addEventListener('offline', () => {
+    console.log('App is offline!');
+    // Potentially show a subtle notification or update UI
+});
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
