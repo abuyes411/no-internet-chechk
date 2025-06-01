@@ -8,7 +8,7 @@ const CACHE_NAME = 'my-quiz-app-cache-v1';
 
 // Define the URL of your custom offline page.
 // This path must be relative to the service worker's scope (which is '/' in your case).
-const OFFLINE_URL = '/offline.html';
+const OFFLINE_URL = 'offline.html';
 
 // Define assets that should ALWAYS be pre-cached to ensure basic functionality offline.
 // This should include your offline page, logo, icon, and possibly critical CSS/JS.
