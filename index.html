@@ -156,43 +156,18 @@
       window.location.href = '/'; 
     }
 
-    // scripts/app.js (or directly in index.html, quiz.html, about.html)
-
-// Check if the browser supports Service Workers
-if ('serviceWorker' in navigator) {
-  // Add a 'load' event listener to ensure the page is fully loaded before registering
-  window.addEventListener('load', () => {
-    // Register your service-worker.js file.
-    // The path '/' means it will control the entire scope of your domain.
-    navigator.serviceWorker.register('service-worker.js')
-      .then(registration => {
-        // Registration was successful
-        console.log('Service Worker registered with scope:', registration.scope);
-      })
-      .catch(error => {
-        // Registration failed
-        console.error('Service Worker registration failed:', error);
-      });
-  });
-} else {
-  console.warn('Service Workers are not supported in this browser.');
-}
-
-// Your existing back() function for the logo
-function back() {
-    window.history.back();
-}
-
-// You might also want to add event listeners for online/offline status for live feedback
-window.addEventListener('online', () => {
-    console.log('App is online!');
-    // Potentially update UI or retry failed requests
-});
-
-window.addEventListener('offline', () => {
-    console.log('App is offline!');
-    // Potentially show a subtle notification or update UI
-});
+  // Check if the browser supports Service Workers
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('Service Worker registered successfully:', registration);
+                    })
+                    .catch(error => {
+                        console.error('Service Worker registration failed:', error);
+                    });
+            });
+        }
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
