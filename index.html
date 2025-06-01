@@ -164,7 +164,7 @@ if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     // Register your service-worker.js file.
     // The path '/' means it will control the entire scope of your domain.
-    navigator.serviceWorker.register('/service-worker.js')
+    navigator.serviceWorker.register('service-worker.js')
       .then(registration => {
         // Registration was successful
         console.log('Service Worker registered with scope:', registration.scope);
